@@ -51,10 +51,6 @@ function showSaveStatus() {
     }
 }
 
-setTimeout(function() {
-    addLotto_num();
-}, 45000);
-
 function generateTrnoNumber(index1) {
     var desired1 = Math.floor(Math.random() * 9) + 1;
     var duration1 = 3500;
@@ -89,22 +85,9 @@ $(function() {
             generateNumber(0);
         }, 17500);
 
-        // setTimeout(function(e) {
-
-        //     $.ajax({
-        //         type: 'post',
-        //         url: 'saveLotto_trans.php',
-        //         data: {
-        //             trno: $("#trno0").text()
-        //         },
-        //         dataType: 'text, json',
-        //         success: function(res) {
-        //             console.log(res);
-        //         }
-        //     });
-
-        //     e.preventDefault();
-        // }, 4500);
+        setTimeout(function() {
+            addLotto_num();
+        }, 45000);
 
         $("#rand_gen").attr("disabled", "disabled");
     });
