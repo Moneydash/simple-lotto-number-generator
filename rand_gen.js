@@ -75,6 +75,14 @@ $(function() {
     $("#trno0, #trno1, #trno2, #trno3").text("0");
     $("#output0, #output1, #output2").text("0");
 
+    $(".container").prepend("<div class=\"row justify-content-center\" id=\"spgc_intro\"><p id=\"intro\">SPGC LOTTO<p></div>")
+    $("#spgc_intro").css({ 'background': '#fff', 'width': '1000px', 'height': '1000px', 'z-index': '99' });
+    $("p#intro").css({ 'font-size': '8em', 'margin-left': '1.5em', 'margin-top': '1em' });
+
+    setTimeout(function() {
+        $(".container #spgc_intro").fadeOut('slow');
+    }, 2000)
+
     $("#reset").on("click", function() {
         location.reload();
     });

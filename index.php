@@ -18,6 +18,9 @@
 <body>
     
     <div class="container">
+        <div class="row justify-content-center my-3">
+            <p class="text-center h2">SPGC LOTTO</p>
+        </div>
         <div class="row justify-content-center mt-3" id="first_row">
             <div class="colss mr-1 round">
                 <p id="trno3" name="trno3" class="text-center text-danger h3 trno"></p>
@@ -32,14 +35,14 @@
                 <p id="trno0" name="trno0" class="text-center text-danger h3 trno"></p>
             </div>
         </div>
-        <div class="row justify-content-center mt-3 mb-4">
-            <div class="col-3 colss mr-4 round">
+        <div class="row justify-content-center mt-3 mb-4" id="second_row">
+            <div class="colss mr-4 round">
                 <p id="output2" name="output2" class="rand_num text-center text-white display-3"></p>
             </div>
-            <div class="col-3 colss mr-4 round">
+            <div class="colss mr-4 round">
                 <p id="output1" name="output1" class="rand_num text-center text-white display-3"></p>
             </div>
-            <div class="col-3 colss round">
+            <div class="colss round">
                 <p id="output0" name="output0" class="rand_num text-center text-white display-3"></p>
             </div>
         </div>

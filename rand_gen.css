@@ -21,20 +21,20 @@ p {
 }
 
 #first_row div {
-    width: 280px;
-    height: 280px;
+    width: 150px;
+    height: 150px;
 }
 
 #first_row div p {
-    padding-bottom: 2em;
+    margin-top: -1.35em;
 }
 
 .round {
     display: block;
     background: black;
     border-radius: 50%;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     margin: 0;
     padding-top: 7em;
 }
