@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Digital-7 Mono';
+    font-weight: normal;
+    font-size: normal;
+    src: url('digital-7.mono.ttf')
+}
+
+p {
+    font-family: 'Digital-7 Mono', monospace;
+}
+
+.colss {
+    border: 1px solid #ccc;
+}
+
+#trno0,
+#trno1,
+#trno2,
+#trno3 {
+    font-size: 300%;
+}
+
+#first_row div {
+    width: 280px;
+    height: 280px;
+}
+
+#first_row div p {
+    padding-bottom: 2em;
+}
+
+.round {
+    display: block;
+    background: black;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    margin: 0;
+    padding-top: 7em;
+}
