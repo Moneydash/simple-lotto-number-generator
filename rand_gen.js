@@ -97,7 +97,11 @@ $(function() {
             addLotto_num();
         }, 45000);
 
-        $("#rand_gen").attr("disabled", "disabled");
+        $("#rand_gen").hide('slow');
+        setTimeout(function () {
+            $("#reset_div").removeClass("col-4").addClass("col-8")
+        }, 500)
+        
     });
 
 });

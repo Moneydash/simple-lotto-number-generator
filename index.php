@@ -50,7 +50,7 @@
             <div class="col-4 mr-1">
                 <button class="btn btn-block btn-primary btn-lg" id="rand_gen">Generate</button>
             </div>
-            <div class="col-4 mr-1">
+            <div class="col-4 mr-1" id="reset_div">
                 <input type="reset" id="reset" class="btn btn-block btn-primary btn-lg">
             </div>
         </div>
