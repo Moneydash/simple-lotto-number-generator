@@ -2,7 +2,7 @@ var numbers = [1];
 
 function generateNumber(index) {
     var desired = Math.floor(Math.random() * 9) + 1;
-    var duration = 7500;
+    var duration = 15000;
 
     var output = $('#output' + index); // Start ID with letter
     var started = new Date().getTime();
@@ -21,14 +21,13 @@ function generateNumber(index) {
 }
 
 function addLotto_num() {
-    var trno = $("#trno3").text() + '' + $("#trno2").text() + '' + $("#trno1").text() + '' + $("#trno0").text();
     var output = $("#output2").text() + '' + $("#output1").text() + '' + $("#output0").text();
 
     request = createRequest();
     if (request == null) {
         alert("Unable to create request!");
     } else {
-        var url = 'saveLotto_trans.php?trno=' + trno + '&output=' + output;
+        var url = 'saveLotto_trans.php?&output=' + output;
         request.onreadystatechange = showSaveStatus;
         request.open("GET", url, true);
         request.send(null);
@@ -51,29 +50,10 @@ function showSaveStatus() {
     }
 }
 
-function generateTrnoNumber(index1) {
-    var desired1 = Math.floor(Math.random() * 9) + 1;
-    var duration1 = 3500;
-
-    var trno = $('#trno' + index1); // Start ID with letter
-    var started1 = new Date().getTime();
-
-    animationTimer1 = setInterval(function() {
-        if (trno.text().trim() === desired1 || new Date().getTime() - started1 > duration1) {
-            clearInterval(animationTimer1); // Stop the loop
-            trno.text(desired1); // Print desired number in case it stopped at a different one due to duration expiration
-            generateTrnoNumber(index1 + 1);
-        } else {
-            trno.text(
-                Math.floor(Math.random() * 9)
-            );
-        }
-    }, 100);
-}
-
 $(function() {
-    $("#trno0, #trno1, #trno2, #trno3").text("0");
+    var tm1;
     $("#output0, #output1, #output2").text("0");
+    $("#result_div").hide();
 
     $(".container").prepend("<div class=\"row justify-content-center\" id=\"spgc_intro\"><p id=\"intro\">SPGC LOTTO<p></div>")
     $("#spgc_intro").css({ 'position': 'absolute', 'background': '#fff', 'width': '1000px', 'height': '650px', 'z-index': '99' });
@@ -84,52 +64,68 @@ $(function() {
     }, 2000)
 
     $("#reset").on("click", function() {
-        location.reload();
+        clearInterval(animationTimer);
+        $("#output0").text('0');
+        $("#output1").text('0');
+        $("#output2").text('0');
+        $("#rand_gen").show("slow");
+        clearTimeout(tm1);
+        setTimeout(function() {
+            $("#reset_div").removeClass("col-8").addClass("col-4");
+            $("#result_div").fadeIn();
+        }, -500);
     });
 
     $(document).on("keyup", function(e) {
         if (e.which == 8) {
-            location.reload();
+            clearInterval(animationTimer);
+            $("#output0").text('0');
+            $("#output1").text('0');
+            $("#output2").text('0');
+            $("#rand_gen").show("slow");
+            clearTimeout(tm1);
+            setTimeout(function() {
+                $("#reset_div").removeClass("col-8").addClass("col-4");
+                $("#result_div").fadeIn();
+            }, -500);
         }
     });
 
     for (let i = 0; i < 4; i++) {
         if ($("#output" + i).text() == "1" || $("#trno").text() == "1") {
-            $("#output" + i + ", #trno" + i).css({ 'margin-left': '11px' });
+            $("#output" + i).css({ 'margin-left': '11px' });
         }
     }
 
     $("#rand_gen").on("click", function() {
-        generateTrnoNumber(0);
-        setTimeout(function() {
-            generateNumber(0);
-        }, 17500);
-
-        setTimeout(function() {
+        generateNumber(0);
+        tm1 = setTimeout(function() {
             addLotto_num();
-        }, 45000);
+        }, 47000);
 
         $("#rand_gen").hide('slow');
         setTimeout(function() {
-            $("#reset_div").removeClass("col-4").addClass("col-8")
-        }, 500)
+            $("#reset_div").removeClass("col-4").addClass("col-8");
+            $("#result_div").fadeOut();
+        }, 500);
 
     });
 
     $(document).on("keypress", function(e) {
         if (e.which == 13) {
-            generateTrnoNumber(0);
-            setTimeout(function() {
-                generateNumber(0);
-            }, 17500);
+            generateNumber(0);
+            tm1 = setTimeout(function() {
+                addLotto_num();
+            }, 47000);
 
             setTimeout(function() {
-                addLotto_num();
-            }, 45000);
+                $(".container").append("<div class=\"row justify-content-center mb-4\"></div>")
+            });
 
             $("#rand_gen").hide('slow');
             setTimeout(function() {
-                $("#reset_div").removeClass("col-4").addClass("col-8")
+                $("#reset_div").removeClass("col-4").addClass("col-8");
+                $("#result_div").fadeOut();
             }, 500)
         }
     })

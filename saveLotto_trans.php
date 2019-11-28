@@ -10,12 +10,11 @@ $dbcon = mysqli_connect($host, $root, $password, $dbname);
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
-    $trno = $_REQUEST["trno"];
     $output = $_REQUEST["output"];
 
-    if (isset($trno) && isset($output)) {
-        if (!empty($trno) && !empty($output)) {
-            $sql = "INSERT INTO `spgc_lotto`.`tbl_savelotto_num`(trno, lotto_num, lotto_time, lotto_date) VALUES('".$trno."', '".$output."', NOW(), NOW())";
+    if (isset($output)) {
+        if (!empty($output)) {
+            $sql = "INSERT INTO `spgc_lotto`.`tbl_savelotto_num`(lotto_num, lotto_time, lotto_date) VALUES('".$output."', NOW(), NOW())";
             $result = mysqli_query($dbcon, $sql);
 
             if ($result == TRUE) {
