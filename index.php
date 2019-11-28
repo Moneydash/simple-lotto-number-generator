@@ -22,28 +22,28 @@
             <p class="text-center h2">SPGC LOTTO</p>
         </div>
         <div class="row justify-content-center mt-3" id="first_row">
-            <div class="colss mr-1 round">
+            <div class="colss mr-1 round blue">
                 <p id="trno3" name="trno3" class="text-center text-danger h3 trno"></p>
             </div>
-            <div class="colss mr-1 round">
+            <div class="colss mr-1 round black">
                 <p id="trno2" name="trno2" class="text-center text-danger h3 trno"></p>
             </div>
-            <div class="colss mr-1 round">
+            <div class="colss mr-1 round red">
                 <p id="trno1" name="trno1" class="text-center text-danger h3 trno"></p>
             </div>
-            <div class="colss mr-1 round">
+            <div class="colss mr-1 round yellow">
                 <p id="trno0" name="trno0" class="text-center text-danger h3 trno"></p>
             </div>
         </div>
         <div class="row justify-content-center mt-3 mb-4" id="second_row">
-            <div class="colss mr-4 round">
-                <p id="output2" name="output2" class="rand_num text-center text-white display-3"></p>
+            <div class="colss mr-4 round purple">
+                <p id="output2" name="output2" class="rand_num text-center display-3"></p>
             </div>
-            <div class="colss mr-4 round">
-                <p id="output1" name="output1" class="rand_num text-center text-white display-3"></p>
+            <div class="colss mr-4 round orange">
+                <p id="output1" name="output1" class="rand_num text-center display-3"></p>
             </div>
-            <div class="colss round">
-                <p id="output0" name="output0" class="rand_num text-center text-white display-3"></p>
+            <div class="colss round green">
+                <p id="output0" name="output0" class="rand_num text-center display-3"></p>
             </div>
         </div>
         <div class="row justify-content-center mb-3">

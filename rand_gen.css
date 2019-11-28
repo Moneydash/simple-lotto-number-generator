@@ -26,19 +26,63 @@ p {
 }
 
 #first_row div p {
-    margin-top: -1.35em;
+    margin-top: -1.4em;
+    align-content: center;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    margin-left: .94em;
+    padding-top: 4.56px;
+    background: #eee;
 }
 
 #second_row div p {
-    margin-top: -.5em;
+    margin-top: -.48em;
+    align-content: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: 1.1em;
+    padding-top: 4.56px;
+    background: #eee;
 }
 
 .round {
     display: block;
-    background: black;
+    border: 1px solid #555;
+    box-shadow: 12px 12px 20px rgba(50, 50, 50, 0.6);
+    background: #0077ff;
     border-radius: 50%;
     height: 250px;
     width: 250px;
     margin: 0;
     padding-top: 7em;
+}
+
+.blue {
+    background: #0077ff;
+}
+
+.black {
+    background: #000;
+}
+
+.red {
+    background: rgb(255, 44, 44);
+}
+
+.yellow {
+    background: rgb(252, 255, 104);
+}
+
+.purple {
+    background: rgb(154, 0, 200);
+}
+
+.orange {
+    background: rgb(255, 66, 33);
+}
+
+.green {
+    background: rgb(0, 187, 47);
 }

@@ -76,8 +76,8 @@ $(function() {
     $("#output0, #output1, #output2").text("0");
 
     $(".container").prepend("<div class=\"row justify-content-center\" id=\"spgc_intro\"><p id=\"intro\">SPGC LOTTO<p></div>")
-    $("#spgc_intro").css({ 'background': '#fff', 'width': '1000px', 'height': '1000px', 'z-index': '99' });
-    $("p#intro").css({ 'font-size': '8em', 'margin-left': '1.5em', 'margin-top': '1em' });
+    $("#spgc_intro").css({ 'position': 'absolute', 'background': '#fff', 'width': '1000px', 'height': '650px', 'z-index': '99' });
+    $("p#intro").css({ 'font-size': '8em', 'margin-left': '1.5em', 'margin-top': '1.3em' });
 
     setTimeout(function() {
         $(".container #spgc_intro").fadeOut('slow');
@@ -86,6 +86,18 @@ $(function() {
     $("#reset").on("click", function() {
         location.reload();
     });
+
+    $(document).on("keyup", function(e) {
+        if (e.which == 8) {
+            location.reload();
+        }
+    });
+
+    for (let i = 0; i < 4; i++) {
+        if ($("#output" + i).text() == "1" || $("#trno").text() == "1") {
+            $("#output" + i + ", #trno" + i).css({ 'margin-left': '11px' });
+        }
+    }
 
     $("#rand_gen").on("click", function() {
         generateTrnoNumber(0);
@@ -98,10 +110,28 @@ $(function() {
         }, 45000);
 
         $("#rand_gen").hide('slow');
-        setTimeout(function () {
+        setTimeout(function() {
             $("#reset_div").removeClass("col-4").addClass("col-8")
         }, 500)
-        
+
     });
+
+    $(document).on("keypress", function(e) {
+        if (e.which == 13) {
+            generateTrnoNumber(0);
+            setTimeout(function() {
+                generateNumber(0);
+            }, 17500);
+
+            setTimeout(function() {
+                addLotto_num();
+            }, 45000);
+
+            $("#rand_gen").hide('slow');
+            setTimeout(function() {
+                $("#reset_div").removeClass("col-4").addClass("col-8")
+            }, 500)
+        }
+    })
 
 });
