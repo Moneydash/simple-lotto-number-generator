@@ -1,6 +1,8 @@
 var numbers = [1];
+var tm1;
 
 function generateNumber(index) {
+    console.log(status);
     var desired = Math.floor(Math.random() * 9) + 1;
     var duration = 15000;
 
@@ -51,7 +53,6 @@ function showSaveStatus() {
 }
 
 $(function() {
-    var tm1;
     $("#output0, #output1, #output2").text("0");
     $("#result_div").hide();
 
@@ -101,33 +102,33 @@ $(function() {
         generateNumber(0);
         tm1 = setTimeout(function() {
             addLotto_num();
-        }, 47000);
+        }, 46000);
 
         $("#rand_gen").hide('slow');
         setTimeout(function() {
             $("#reset_div").removeClass("col-4").addClass("col-8");
             $("#result_div").fadeOut();
         }, 500);
-
     });
 
-    $(document).on("keypress", function(e) {
-        if (e.which == 13) {
-            generateNumber(0);
-            tm1 = setTimeout(function() {
-                addLotto_num();
-            }, 47000);
+    // $(document).on("keypress", function(e) {
+    //     if (e.which == 13 && status != 1) {
+    //         generateNumber(0);
+    //         tm1 = setTimeout(function() {
+    //             addLotto_num();
+    //         }, 46000);
 
-            setTimeout(function() {
-                $(".container").append("<div class=\"row justify-content-center mb-4\"></div>")
-            });
+    //         setTimeout(function() {
+    //             $(".container").append("<div class=\"row justify-content-center mb-4\"></div>")
+    //         });
 
-            $("#rand_gen").hide('slow');
-            setTimeout(function() {
-                $("#reset_div").removeClass("col-4").addClass("col-8");
-                $("#result_div").fadeOut();
-            }, 500)
-        }
-    })
+    //         $("#rand_gen").hide('slow');
+    //         setTimeout(function() {
+    //             $("#reset_div").removeClass("col-4").addClass("col-8");
+    //             $("#result_div").fadeOut();
+    //         }, 500);
+    //     }
+
+    // });
 
 });
