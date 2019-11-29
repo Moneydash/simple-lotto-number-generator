@@ -10,7 +10,7 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
-    $sql = "SELECT * FROM `spgc_lotto`.`tbl_savelotto_num`";
+    $sql = "SELECT * FROM `spgc_lotto`.`tbl_savelotto_num` ORDER BY `lotto_time` DESC";
     $result = mysqli_query($dbcon, $sql);
 
     $data = array();
